@@ -9,7 +9,7 @@ import ShoppingCartIcon from "../components/ShoppingCartIcon";
 const Home = () => {
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor:COLORS.primary }}>
       <FocusedStatusBar background={COLORS.primary} />
       <ScrollView >
         <HomeHeader />
@@ -46,7 +46,7 @@ const Home = () => {
               zIndex: -1,
             }}
           >
-            <View style={{ height: 300, backgroundColor: COLORS.primary }} />
+            <View style={{ height: "100%", backgroundColor: COLORS.primary }} />
             <View style={{ flex: 1, backgroundColor: COLORS.white }} />
           </View>
         </View>

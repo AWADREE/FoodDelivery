@@ -17,7 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 const Checkout = ({ route }) => {
   const navigation = useNavigation();
   const { totalPrice } = route.params; 
-  const [paymentMethod, setPaymentMethod] = useState("cash")
+  const [paymentMethod, setPaymentMethod] = useState("")
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -172,6 +172,7 @@ const Checkout = ({ route }) => {
                 height: 45,
               }}
               onPress={() => navigation.navigate("Checkout", { totalPrice })}
+              disabled={paymentMethod !== "Cash" && paymentMethod !== "Card"}
             >
               <Text
                 style={{

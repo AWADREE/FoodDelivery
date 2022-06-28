@@ -22,8 +22,8 @@ const HomeHeader = ({onSearch}) => {
             source={assets.logo}
             resizeMode="contain"
             style={{
-              width: 90,
-              height: 25,
+              width: 60,
+              height: 50,
             }}
           />
 
