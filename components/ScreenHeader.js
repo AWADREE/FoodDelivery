@@ -1,4 +1,4 @@
-import { View, Text, StatusBar } from 'react-native'
+import { View, Text, StatusBar , Platform} from 'react-native'
 import React from 'react'
 import ShoppingCartIcon from "./ShoppingCartIcon";
 import { CircleButton } from './Button';
@@ -18,8 +18,9 @@ const ScreenHeader = () => {
         alignItems: "center",
         flexDirection: "row",
         padding: SIZES.small,
-        paddingHorizontal:SIZES.medium,
+        paddingHorizontal: SIZES.medium,
         zIndex: 1,
+        marginTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight + 10,
       }}
     >
       <CircleButton

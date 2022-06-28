@@ -7,30 +7,45 @@ import {
   ScrollView,
   StatusBar,
   TouchableOpacity,
+  Platform
 } from "react-native";
 
 import { COLORS, Resturants, Offers, assets, SIZES, FONTS } from "../constants";
 import { FocusedStatusBar, CartCard, CircleButton } from "../components";
 
+import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { clear } from "../reducers/cartSlice";
 import { cartTotalPriceSeleector } from "../selectors";
 
-const Cart = ({route, navigation}) => {
+const Cart = ({route}) => {
+  
+    const navigation = useNavigation();
     const dispatch = useDispatch();
     const cart = useSelector((state)=>state.cart);
     const totalPrice = useSelector(cartTotalPriceSeleector);
 
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-        <ScrollView stickyHeaderIndices={[0]}>
-          <CircleButton
-            imgUrl={assets.left}
-            handlePress={() => navigation.goBack()}
-            left={15}
-            top={StatusBar.currentHeight + 10}
-          />
+        <ScrollView stickyHeaderIndices={[1]}>
           <FocusedStatusBar background={COLORS.primary} />
+          <View
+            style={{
+              width: "100%",
+              padding: SIZES.small,
+              paddingHorizontal: SIZES.medium,
+              zIndex: 1,
+              // marginTop:
+              //   Platform.OS === "ios" ? 0 : StatusBar.currentHeight ,
+            }}
+          >
+            <CircleButton
+              imgUrl={assets.left}
+              handlePress={() => navigation.goBack()}
+              // left={15}
+              // top={StatusBar.currentHeight + 10}
+            />
+          </View>
 
           {cart.length > 0 ? (
             <View>

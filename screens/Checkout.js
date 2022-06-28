@@ -31,7 +31,11 @@ const Checkout = ({ route }) => {
           left={15}
           top={StatusBar.currentHeight + 10}
         />
-        <View>
+        <View
+          style={{
+            marginTop: SIZES.extraLarge,
+          }}
+        >
           <View
             style={{
               width: "100%",
@@ -73,8 +77,8 @@ const Checkout = ({ route }) => {
                 {paymentMethod == "Cash" ? (
                   <View
                     style={{
-                      height: 18,
-                      width: 18,
+                      height: 22,
+                      width: 22,
                       backgroundColor: COLORS.primary,
                       borderRadius: SIZES.large,
                     }}
@@ -87,7 +91,7 @@ const Checkout = ({ route }) => {
               <Text
                 style={{
                   fontFamily: FONTS.medium,
-                  fontSize: FONTS.medium,
+                  fontSize: SIZES.medium,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
@@ -118,8 +122,8 @@ const Checkout = ({ route }) => {
                 {paymentMethod == "Card" ? (
                   <View
                     style={{
-                      height: 18,
-                      width: 18,
+                      height: 22,
+                      width: 22,
                       backgroundColor: COLORS.primary,
                       borderRadius: SIZES.large,
                     }}
@@ -132,7 +136,7 @@ const Checkout = ({ route }) => {
               <Text
                 style={{
                   fontFamily: FONTS.medium,
-                  fontSize: FONTS.medium,
+                  fontSize: SIZES.medium,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
