@@ -4,14 +4,16 @@ import { useNavigation } from '@react-navigation/native'
 import {COLORS, SIZES, SHADOWS, assets} from '../constants'
 import { CircleButton, RectButton } from './Button'
 import { SubInfo, Rating, Price, Title } from "./SubInfo";
+import { addToCart } from "../reducers/cartSlice";
+import { useDispatch } from "react-redux";
 
-const RestaurantCard = ({data}, isOffer) => {
+
+const OfferCard = ({data}) => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("ResturantDetailes", { data })}
-    >
+    <TouchableOpacity onPress={() => navigation.navigate("Detailes", { data })}>
       <View
         style={{
           backgroundColor: COLORS.white,
@@ -55,12 +57,18 @@ const RestaurantCard = ({data}, isOffer) => {
               alignItems: "center",
             }}
           >
-            <Rating rating={data.rating} />
+            <Price price={data.price} />
+            <RectButton
+              minWidth={120}
+              fontSize={SIZES.font}
+              // handlePress={() => navigation.navigate("Detailes", { data })}
+              handlePress={() => dispatch(addToCart(data))}
+            />
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+     </TouchableOpacity> 
   );
 }
 
-export default RestaurantCard
+export default OfferCard;

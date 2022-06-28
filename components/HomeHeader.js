@@ -1,12 +1,58 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 
-const HomeHeader = () => {
+import {COLORS, FONTS, SIZES, assets} from '../constants'
+import ShoppingCartIcon from './ShoppingCartIcon';
+
+const HomeHeader = ({onSearch}) => {
   return (
-    <View>
-      <Text>HomeHeader</Text>
-    </View>
-  )
+      <View
+        style={{
+          backgroundColor: COLORS.primary,
+          padding: SIZES.font,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={assets.logo}
+            resizeMode="contain"
+            style={{
+              width: 90,
+              height: 25,
+            }}
+          />
+
+          <ShoppingCartIcon />
+        </View>
+
+        <View style={{ marginVertical: SIZES.font }}>
+          <Text
+            style={{
+              fontFamily: FONTS.regular,
+              fontSize: SIZES.small,
+              color: COLORS.white,
+            }}
+          >
+            Hello, Victoria 👋
+          </Text>
+          <Text
+            style={{
+              fontFamily: FONTS.bold,
+              fontSize: SIZES.large,
+              color: COLORS.white,
+              marginTop: SIZES.base / 2,
+            }}
+          >
+            let's find you a good deal
+          </Text>
+        </View>
+      </View>
+  );
 }
 
 export default HomeHeader

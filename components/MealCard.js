@@ -4,13 +4,16 @@ import { useNavigation } from '@react-navigation/native'
 import {COLORS, SIZES, SHADOWS, assets} from '../constants'
 import { CircleButton, RectButton } from './Button'
 import { SubInfo, Rating, Price, Title } from "./SubInfo";
+import { addToCart } from "../reducers/cartSlice";
+import { useDispatch } from "react-redux";
 
-const RestaurantCard = ({data}, isOffer) => {
+const MealCard = ({data}) => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("ResturantDetailes", { data })}
+      onPress={() => navigation.navigate("Detailes", { data })}
     >
       <View
         style={{
@@ -32,6 +35,8 @@ const RestaurantCard = ({data}, isOffer) => {
               borderTopRightRadius: SIZES.font,
             }}
           />
+
+          {/* <CircleButton imgUrl={assets.heart} right={10} top={10}/> */}
         </View>
 
         <SubInfo />
@@ -43,7 +48,7 @@ const RestaurantCard = ({data}, isOffer) => {
         >
           <Title
             title={data.name}
-            subTitle={data.creator}
+            subTitle={data.description}
             titleSize={SIZES.large}
             subtitleSize={SIZES.small}
           />
@@ -55,7 +60,14 @@ const RestaurantCard = ({data}, isOffer) => {
               alignItems: "center",
             }}
           >
-            <Rating rating={data.rating} />
+            <Price price={data.price} />
+            {/* <Rating rating={data.rating} /> */}
+            <RectButton
+              minWidth={120}
+              fontSize={SIZES.font}
+              // handlePress={() => navigation.navigate("Detailes", { data })}
+              handlePress={() => dispatch(addToCart(data))}
+            />
           </View>
         </View>
       </View>
@@ -63,4 +75,4 @@ const RestaurantCard = ({data}, isOffer) => {
   );
 }
 
-export default RestaurantCard
+export default MealCard;
