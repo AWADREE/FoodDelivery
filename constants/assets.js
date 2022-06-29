@@ -16,6 +16,7 @@ import nft04 from "../assets/images/nft04.jpeg";
 import nft05 from "../assets/images/nft05.jpeg";
 import nft06 from "../assets/images/nft06.jpeg";
 import nft07 from "../assets/images/nft07.jpeg";
+import sad from "../assets/images/sad.png"
 
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
@@ -33,6 +34,7 @@ export default {
   home,
   google,
 
+  sad,
   logo,
   nft01,
   nft02,

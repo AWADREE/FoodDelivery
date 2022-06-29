@@ -7,7 +7,8 @@ import {
   ScrollView,
   StatusBar,
   TouchableOpacity,
-  Platform
+  Platform,
+  Image
 } from "react-native";
 
 import { COLORS, Resturants, Offers, assets, SIZES, FONTS } from "../constants";
@@ -139,7 +140,54 @@ const Cart = ({route}) => {
               </View>
             </View>
           ) : (
-            <Text>Your cart is empty</Text>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <View style={{ margin: SIZES.large }}>
+                <Text
+                  style={{
+                    fontFamily: FONTS.light,
+                    fontSize: SIZES.extraLarge,
+                  }}
+                >
+                  your cart is Empty
+                </Text>
+              </View>
+              <Image
+                source={assets.sad}
+                resizeMode="cover"
+                style={{
+                  width: 80,
+                  height: 80,
+                }}
+              />
+              <TouchableOpacity
+                style={{
+                  margin: SIZES.large,
+                  backgroundColor: COLORS.primary,
+                  borderRadius: SIZES.extraLarge,
+                  width: "80%",
+                  height: 40,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onPress={() => navigation.navigate("Home")}
+              >
+                <Text
+                  style={{
+                    color: COLORS.white,
+                    fontFamily: FONTS.medium,
+                    fontSize: SIZES.large,
+                  }}
+                >
+                  Continue shopping
+                </Text>
+              </TouchableOpacity>
+            </View>
           )}
         </ScrollView>
       </SafeAreaView>
