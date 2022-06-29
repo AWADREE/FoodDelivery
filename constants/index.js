@@ -1,6 +1,6 @@
 import assets from "./assets";
 import { COLORS, SHADOWS, SIZES, FONTS } from "./theme";
-import { Meals, Resturants, Offers } from "./dummy";
+import { Meals, Resturants, Offers, PastOrders, ActiveOrders } from "./dummy";
 import { CircleButton, RectButton } from "../components/Button";
 
 export {
@@ -10,6 +10,8 @@ export {
   SIZES,
   FONTS,
   Meals,
+  PastOrders,
+  ActiveOrders,
   Resturants,
   Offers,
   CircleButton,

@@ -604,5 +604,134 @@ const Meals = [
   },
 ];
 
+const PastOrders = [
+  {
+    id: "Or-01",
+    number: "75820223",
+    total: 161,
+    items: [
+      {
+        id: "M-02",
+        name: "Super Supreme",
+        price: 7.25,
+        description:
+          "Our famous combination of beef pepperoni, juicy beef, mushrooms, green peppers, onions, black olives and melting mozzarella cheese",
+        image: assets.nft02,
+      },
+      {
+        id: "M-03",
+        name: "Spicy Fire Wings",
+        price: 95.25,
+        description:
+          "Juicy chicken wings coated and baked to perfection spicy served with our special BBQ sauce",
+        image: assets.nft03,
+      },
+      {
+        id: "M-04",
+        name: "Classic Pepperoni",
+        price: 54.25,
+        description:
+          "One of our all-time specialties. A meaty feast of pepperoni, mushroom, black olives, mozzarella cheese and tomato sauce",
+        image: assets.nft04,
+      },
+    ],
+  },
+  {
+    id: "Or-02",
+    number: "123987432",
+    total: 161,
+    items: [
+      {
+        id: "M-02",
+        name: "Super Supreme",
+        price: 7.25,
+        description:
+          "Our famous combination of beef pepperoni, juicy beef, mushrooms, green peppers, onions, black olives and melting mozzarella cheese",
+        image: assets.nft02,
+      },
+      {
+        id: "M-03",
+        name: "Spicy Fire Wings",
+        price: 95.25,
+        description:
+          "Juicy chicken wings coated and baked to perfection spicy served with our special BBQ sauce",
+        image: assets.nft03,
+      },
+      {
+        id: "M-04",
+        name: "Classic Pepperoni",
+        price: 54.25,
+        description:
+          "One of our all-time specialties. A meaty feast of pepperoni, mushroom, black olives, mozzarella cheese and tomato sauce",
+        image: assets.nft04,
+      },
+    ],
+  },
+  {
+    id: "Or-03",
+    number: "1230984",
+    total: 161,
+    items: [
+      {
+        id: "M-02",
+        name: "Super Supreme",
+        price: 7.25,
+        description:
+          "Our famous combination of beef pepperoni, juicy beef, mushrooms, green peppers, onions, black olives and melting mozzarella cheese",
+        image: assets.nft02,
+      },
+      {
+        id: "M-03",
+        name: "Spicy Fire Wings",
+        price: 95.25,
+        description:
+          "Juicy chicken wings coated and baked to perfection spicy served with our special BBQ sauce",
+        image: assets.nft03,
+      },
+      {
+        id: "M-04",
+        name: "Classic Pepperoni",
+        price: 54.25,
+        description:
+          "One of our all-time specialties. A meaty feast of pepperoni, mushroom, black olives, mozzarella cheese and tomato sauce",
+        image: assets.nft04,
+      },
+    ],
+  },
+];
+const ActiveOrders = [
+  {
+    id: "Or-02",
+    number: "3489283",
+    total: 161,
+    items: [
+      {
+        id: "M-02",
+        name: "Super Supreme",
+        price: 7.25,
+        description:
+          "Our famous combination of beef pepperoni, juicy beef, mushrooms, green peppers, onions, black olives and melting mozzarella cheese",
+        image: assets.nft02,
+      },
+      {
+        id: "M-03",
+        name: "Spicy Fire Wings",
+        price: 95.25,
+        description:
+          "Juicy chicken wings coated and baked to perfection spicy served with our special BBQ sauce",
+        image: assets.nft03,
+      },
+      {
+        id: "M-04",
+        name: "Classic Pepperoni",
+        price: 54.25,
+        description:
+          "One of our all-time specialties. A meaty feast of pepperoni, mushroom, black olives, mozzarella cheese and tomato sauce",
+        image: assets.nft04,
+      },
+    ],
+  },
+];
 
-export { Meals, Resturants, Offers };
+
+export { Meals, Resturants, Offers, PastOrders, ActiveOrders };

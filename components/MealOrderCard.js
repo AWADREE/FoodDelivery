@@ -7,7 +7,7 @@ import { SubInfo, Rating, Price, Title } from "./SubInfo";
 import { addToCart } from "../reducers/cartSlice";
 import { useDispatch } from "react-redux";
 
-const MealCard = ({data}) => {
+const MealOrderCard = ({data}) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -63,19 +63,19 @@ const MealCard = ({data}) => {
             <Price price={data.price} />
             {/* <Rating rating={data.rating} /> */}
 
-          {/* <OrderAgainButton
+          <OrderAgainButton
           minWidth={120}
           fontSize={SIZES.font}
           // handlePress={() => navigation.navigate("Detailes", { data })}
           handlePress={() => dispatch(addToCart(data))}
-          /> */}
+          />
 
-            <RectButton
+            {/* <RectButton
             minWidth={120}
             fontSize={SIZES.font}
             // handlePress={() => navigation.navigate("Detailes", { data })}
             handlePress={() => dispatch(addToCart(data))}
-            />
+            /> */}
 
         
           </View>
@@ -85,4 +85,4 @@ const MealCard = ({data}) => {
   );
 }
 
-export default MealCard;
+export default MealOrderCard;

@@ -11,7 +11,7 @@ import Detailes from "./screens/Detailes";
 import ResturantDetailes from "./screens/ResturantDetailes";
 import Cart from "./screens/Cart";
 import Checkout from "./screens/Checkout";
-
+import OrderDetailes from './screens/OrderDetailes';
 
 
 const Stack = createStackNavigator();
@@ -38,7 +38,9 @@ const OrdersNavigator =()=>{
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Orders" component={Orders} />
-        {/* <Stack.Screen name="OrderDetailes" component={OrderDetailes} /> */}
+        <Stack.Screen name="OrderDetailes" component={OrderDetailes} />
+        <Stack.Screen name="Detailes" component={Detailes} />
+        <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     );
 }

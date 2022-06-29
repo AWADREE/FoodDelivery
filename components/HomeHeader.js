@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 import {COLORS, FONTS, SIZES, assets} from '../constants'
 import ShoppingCartIcon from './ShoppingCartIcon';
 
-const HomeHeader = ({onSearch}) => {
+const HomeHeader = () => {
   return (
       <View
         style={{

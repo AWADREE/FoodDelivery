@@ -7,13 +7,19 @@ import {COLORS, SIZES, FONTS} from '../constants'
 const DetailesDesc = ({data}) => {
   return (
     <>
-        <View>
+        <View style={{
+          width:"100%",
+        }}>
+          <View style={{marginBottom:SIZES.small}}>
             <Title 
                 title={data.name}
-                subTitle={data.creator}
+                subTitle={data.description}
                 titleSize={SIZES.extraLarge}
                 subTitleSize={SIZES.font}
             />
+          </View>
+
+            <Price price={data.price}/>
         </View>
     </>
   )

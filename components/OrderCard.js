@@ -2,18 +2,15 @@ import { View ,Text ,Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import {COLORS, SIZES, SHADOWS, assets} from '../constants'
-import { CircleButton, RectButton, OrderAgainButton } from './Button'
+import { CircleButton, RectButton } from './Button'
 import { SubInfo, Rating, Price, Title } from "./SubInfo";
-import { addToCart } from "../reducers/cartSlice";
-import { useDispatch } from "react-redux";
 
-const MealCard = ({data}) => {
+const OrderCard = ({data}) => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("Detailes", { data })}
+      onPress={() => navigation.navigate("OrderDetailes", { data })}
     >
       <View
         style={{
@@ -24,7 +21,7 @@ const MealCard = ({data}) => {
           ...SHADOWS.dark,
         }}
       >
-        <View style={{ width: "100%", height: 250 }}>
+        {/* <View style={{ width: "100%", height: 250 }}>
           <Image
             source={data.image}
             resizeMode="cover"
@@ -35,9 +32,7 @@ const MealCard = ({data}) => {
               borderTopRightRadius: SIZES.font,
             }}
           />
-
-          {/* <CircleButton imgUrl={assets.heart} right={10} top={10}/> */}
-        </View>
+        </View> */}
 
         <SubInfo />
         <View
@@ -47,10 +42,10 @@ const MealCard = ({data}) => {
           }}
         >
           <Title
-            title={data.name}
-            subTitle={data.description}
+            title={"Order #: " + data.number}
+            // subTitle={data.creator}
             titleSize={SIZES.large}
-            subtitleSize={SIZES.small}
+            // subtitleSize={SIZES.small}
           />
           <View
             style={{
@@ -60,24 +55,7 @@ const MealCard = ({data}) => {
               alignItems: "center",
             }}
           >
-            <Price price={data.price} />
-            {/* <Rating rating={data.rating} /> */}
-
-          {/* <OrderAgainButton
-          minWidth={120}
-          fontSize={SIZES.font}
-          // handlePress={() => navigation.navigate("Detailes", { data })}
-          handlePress={() => dispatch(addToCart(data))}
-          /> */}
-
-            <RectButton
-            minWidth={120}
-            fontSize={SIZES.font}
-            // handlePress={() => navigation.navigate("Detailes", { data })}
-            handlePress={() => dispatch(addToCart(data))}
-            />
-
-        
+            <Price price={data.total} />
           </View>
         </View>
       </View>
@@ -85,4 +63,4 @@ const MealCard = ({data}) => {
   );
 }
 
-export default MealCard;
+export default OrderCard;

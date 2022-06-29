@@ -11,6 +11,8 @@ import MealCard from "./MealCard";
 import ShoppingCartIcon from "./ShoppingCartIcon";
 import CartCard from "./cartCard";
 import ScreenHeader from "./ScreenHeader";
+import OrderCard from "./OrderCard"
+import MealOrderCard from "./MealOrderCard";
 
 export {
   HomeHeader,
@@ -19,6 +21,8 @@ export {
   RectButton,
   RestaurantCard,
   OfferCard,
+  OrderCard,
+  MealOrderCard,
   DetailesDesc,
   DetailesBid,
   SubInfo,

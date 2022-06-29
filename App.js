@@ -1,4 +1,4 @@
-import {createStackNavigator} from "@react-navigation/stack";
+// import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer, DefaultTheme} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {Image, View, Text} from "react-native"
@@ -13,18 +13,18 @@ LoginNavigator,
 LocationNavigator
 } from './CustomNavigation'
 
-import Home from "./screens/Home";
-import Detailes from "./screens/Detailes";
-import ResturantDetailes from './screens/ResturantDetailes';
-import Cart from "./screens/Cart";
-import Checkout from "./screens/Checkout";
+// import Home from "./screens/Home";
+// import Detailes from "./screens/Detailes";
+// import ResturantDetailes from './screens/ResturantDetailes';
+// import Cart from "./screens/Cart";
+// import Checkout from "./screens/Checkout";
 
 import { Provider } from "react-redux";
 import store from './store'
 import { COLORS } from "./constants";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+// const Stack = createStackNavigator();
 
 const theme = {
   ...DefaultTheme,

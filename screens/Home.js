@@ -7,15 +7,40 @@ import ShoppingCartIcon from "../components/ShoppingCartIcon";
 
 
 const Home = () => {
+  const [resturantData, setResturantData] = useState(Resturants);
+  const [searching, setSearching] = useState(false)
+
+  const handleSearch =(value) =>{
+    if(!value.length) 
+    {
+      setSearching(false);
+      return setResturantData(Resturants);
+    }
+    
+    setSearching(true);
+    const filteredResturants = Resturants.filter((item)=>
+    item.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    );
+
+    if(filteredResturants.length) {
+      setResturantData(filteredResturants);
+    } else{
+      setResturantData(Resturants);
+    }
+  }
+
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor:COLORS.primary }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusedStatusBar background={COLORS.primary} />
-      <ScrollView >
-        <HomeHeader />
-        <SearchBar />
+      <ScrollView>
+        <HomeHeader/>
+        <SearchBar onSearch={handleSearch} />
         <View style={{ flex: 1 }}>
-          <View style={{ zIndex: 0 }}>
+          
+          {searching? <></>:
+          (
+            <View style={{ zIndex: 0 }}>
             <FlatList
               data={Offers}
               renderItem={({ item }) => <OfferCard data={item} />}
@@ -24,12 +49,14 @@ const Home = () => {
               showsHorizontalScrollIndicator={false}
               // ListHeaderComponent={<HomeHeader />}
               horizontal={true}
-            />
-          </View>
+              />
+            </View>
+          )}
+          
           <View style={{ zIndex: 0 }}>
             <FlatList
               // style={{ flexGrow: 0 }}
-              data={Resturants}
+              data={resturantData}
               renderItem={({ item }) => <RestaurantCard data={item} />}
               keyExtractor={(item) => item.id}
               showsVerticalScrollIndicator={false}

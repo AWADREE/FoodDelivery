@@ -3,13 +3,13 @@ import {View, Text, SafeAreaView, Image, StatusBar, FlatList, ScrollView} from '
 
 import { COLORS, FONTS, SIZES, assets, SHADOWS } from "../constants";
 import { SubInfo, FocusedStatusBar, CircleButton, RectButton,
- DetailesDesc, DetailesBid , MealCard, ScreenHeader} from '../components'
+ DetailesDesc, DetailesBid , ScreenHeader, MealOrderCard} from '../components'
 
 import { Price, Title } from "../components/SubInfo";
 import ShoppingCartIcon from "../components/ShoppingCartIcon";
 
 
-const DetailesHeader = ({data, navigation})=>(
+const OrderHeader = ({data, navigation})=>(
 
   <View style={{
     width:"100%",
@@ -35,7 +35,7 @@ const DetailesHeader = ({data, navigation})=>(
 )
 
 
-const ResturantDetailes = ({ route, navigation }) => {
+const OrderDetailes = ({ route, navigation }) => {
   const { data } = route.params;
 
   return (
@@ -48,29 +48,31 @@ const ResturantDetailes = ({ route, navigation }) => {
       <ScrollView  stickyHeaderIndices={[0]}>
         <ScreenHeader />
         <FlatList
-          data={data.meals}
-          renderItem={({ item }) => <MealCard data={item} />}
+          data={data.items}
+          renderItem={({ item }) => <MealOrderCard data={item} isOrder={true}/>}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
           ListHeaderComponent={() => (
             <React.Fragment>
               {/* <DetailesHeader data={data} navigation={navigation} /> */}
-              <View style={{ marginTop: "3%" }}>
-                <SubInfo />
-              </View>
+              
               <View style={{ padding: SIZES.font }}>
                 <View style={{
                    width:"100%",
                 }}>
                   <View style={{marginBottom:SIZES.small}}>
                     <Title 
-                      title={data.name}
+                      title={"Order #: " + data.number}
                     //subTitle={data.description}
                       titleSize={SIZES.extraLarge}
                     //subTitleSize={SIZES.font}
                     />
                   </View>
+                  <Text style={{
+                    fontFamily:FONTS.semiBold,
+                    fontSize:SIZES.large
+                  }}>Total: ${data.total}</Text>
                 </View>
               </View>
             </React.Fragment>
@@ -81,4 +83,4 @@ const ResturantDetailes = ({ route, navigation }) => {
   );
 };
 
-export default ResturantDetailes;
+export default OrderDetailes;
