@@ -5,16 +5,22 @@ import ShoppingCartIcon from './ShoppingCartIcon';
 
 const HomeHeader = () => {
   return (
+    <View
+      style={{
+        backgroundColor: COLORS.primary,
+        padding: SIZES.font,
+      }}
+    >
       <View
         style={{
-          backgroundColor: COLORS.primary,
-          padding: SIZES.font,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
@@ -26,32 +32,42 @@ const HomeHeader = () => {
               height: 50,
             }}
           />
-
-          <ShoppingCartIcon />
-        </View>
-
-        <View style={{ marginVertical: SIZES.font }}>
           <Text
             style={{
-              fontFamily: FONTS.regular,
+              color: COLORS.white,
               fontSize: SIZES.small,
-              color: COLORS.white,
+              fontWeight: "100",
+              fontStyle: "italic",
             }}
           >
-            Hello, Victoria 👋
-          </Text>
-          <Text
-            style={{
-              fontFamily: FONTS.bold,
-              fontSize: SIZES.large,
-              color: COLORS.white,
-              marginTop: SIZES.base / 2,
-            }}
-          >
-            let's find you a good deal
+            Any Food
           </Text>
         </View>
+        <ShoppingCartIcon />
       </View>
+
+      <View style={{ marginVertical: SIZES.font }}>
+        <Text
+          style={{
+            fontFamily: FONTS.regular,
+            fontSize: SIZES.small,
+            color: COLORS.white,
+          }}
+        >
+          Hello, Victoria 👋
+        </Text>
+        <Text
+          style={{
+            fontFamily: FONTS.bold,
+            fontSize: SIZES.large,
+            color: COLORS.white,
+            marginTop: SIZES.base / 2,
+          }}
+        >
+          let's find you a good deal
+        </Text>
+      </View>
+    </View>
   );
 }
 

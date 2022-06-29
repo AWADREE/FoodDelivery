@@ -6,6 +6,7 @@ import search from "../assets/icons/search.png";
 import cart from "../assets/icons/cart.png";
 import trash from "../assets/icons/trash.png";
 import home from "../assets/icons/home.png";
+import google from "../assets/icons/google.png";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -30,6 +31,7 @@ export default {
   cart,
   trash,
   home,
+  google,
 
   logo,
   nft01,

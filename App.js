@@ -233,7 +233,7 @@ const App =()=> {
                       fontSize: SIZES.small,
                     }}
                   >
-                    Account
+                    Login
                   </Text>
                 </View>
               ),
