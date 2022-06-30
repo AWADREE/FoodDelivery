@@ -25,12 +25,12 @@ const Checkout = ({ route }) => {
       //  stickyHeaderIndices={[2]}
       >
         <FocusedStatusBar background={COLORS.primary} />
-        <CircleButton
+        {/* <CircleButton
           imgUrl={assets.left}
           handlePress={() => navigation.goBack()}
           left={15}
           top={StatusBar.currentHeight + 10}
-        />
+        /> */}
         <View
           style={{
             marginTop: SIZES.extraLarge,

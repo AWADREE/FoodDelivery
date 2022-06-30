@@ -1,14 +1,3 @@
-// const cartItems = (state = [], action)=>{
-//     switch(action.type){
-//         case 'ADD_TO_CART':
-//             return [...state, action.payload]
-//         case 'REMOVE_FROM_CART':
-//             return state.filter(cartItem=>cartItem.id !== action.payload.id)
-//     }
-//     return state
-// }
-
-// export default cartItems
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -63,9 +52,6 @@ const cartSlice = createSlice({
       );
     },
     removeItem: (state, action) => {
-      //   console.log(state);
-      //   console.log(state);
-      //   console.log(action);
       const itemId = action.payload;
       return state.filter((item) => item.id !== itemId);
     },

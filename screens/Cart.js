@@ -16,8 +16,8 @@ import { FocusedStatusBar, CartCard, CircleButton } from "../components";
 
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
-import { clear } from "../reducers/cartSlice";
-import { cartTotalPriceSeleector } from "../selectors";
+import { clear } from "../redux/reducers/cartSlice";
+import { cartTotalPriceSeleector } from "../redux/selectors";
 
 const Cart = ({route}) => {
   
@@ -28,9 +28,11 @@ const Cart = ({route}) => {
 
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-        <ScrollView stickyHeaderIndices={[1]}>
+        <ScrollView
+        //  stickyHeaderIndices={[1]}
+        >
           <FocusedStatusBar background={COLORS.primary} />
-          <View
+          {/* <View
             style={{
               width: "100%",
               padding: SIZES.small,
@@ -46,7 +48,7 @@ const Cart = ({route}) => {
               // left={15}
               // top={StatusBar.currentHeight + 10}
             />
-          </View>
+          </View> */}
 
           {cart.length > 0 ? (
             <View>

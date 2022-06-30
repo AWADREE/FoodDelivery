@@ -1,4 +1,3 @@
-// import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer, DefaultTheme} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {Image, View, Text} from "react-native"
@@ -13,18 +12,11 @@ LoginNavigator,
 LocationNavigator
 } from './CustomNavigation'
 
-// import Home from "./screens/Home";
-// import Detailes from "./screens/Detailes";
-// import ResturantDetailes from './screens/ResturantDetailes';
-// import Cart from "./screens/Cart";
-// import Checkout from "./screens/Checkout";
-
 import { Provider } from "react-redux";
-import store from './store'
+import store from './redux/store'
 import { COLORS } from "./constants";
 
 const Tab = createBottomTabNavigator();
-// const Stack = createStackNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -48,20 +40,6 @@ const App =()=> {
   return (
     <Provider store={store}>
       <NavigationContainer theme={theme}>
-        {/* <Stack.Navigator
-          screenOptions={{ headerShown: false }}
-          initialRouteName="Home"
-        >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen
-            name="ResturantDetailes"
-            component={ResturantDetailes}
-          />
-          <Stack.Screen name="Detailes" component={Detailes} />
-          <Stack.Screen name="Cart" component={Cart} />
-          <Stack.Screen name="Checkout" component={Checkout} />
-        </Stack.Navigator> */}
-
         <Tab.Navigator
           screenOptions={{
             tabBarShowLabel: false,

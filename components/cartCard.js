@@ -4,10 +4,10 @@ import { useNavigation } from '@react-navigation/native'
 import {COLORS, SIZES, SHADOWS, assets, FONTS} from '../constants'
 import { CircleButton, RectButton } from './Button'
 import { SubInfo, Rating, Price, Title } from "./SubInfo";
-import { addToCart } from "../reducers/cartSlice";
+import { addToCart } from "../redux/reducers/cartSlice";
 
 import { useDispatch } from "react-redux";
-import { increment, decrement, clear, removeItem } from "../reducers/cartSlice";
+import { increment, decrement, clear, removeItem } from "../redux/reducers/cartSlice";
 
 const CartCard = ({data}) => {
   const navigation = useNavigation();

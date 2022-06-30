@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import {COLORS, SIZES, SHADOWS, assets} from '../constants'
 import { CircleButton, RectButton, OrderAgainButton } from './Button'
 import { SubInfo, Rating, Price, Title } from "./SubInfo";
-import { addToCart } from "../reducers/cartSlice";
+import { addToCart } from "../redux/reducers/cartSlice";
 import { useDispatch } from "react-redux";
 
 const MealCard = ({data}) => {

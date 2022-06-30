@@ -2,8 +2,12 @@ import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 
 import {COLORS, FONTS, SIZES, assets} from '../constants'
 import ShoppingCartIcon from './ShoppingCartIcon';
+import { useSelector } from 'react-redux';
 
 const HomeHeader = () => {
+  
+  const user = useSelector((state) => state.user);
+
   return (
     <View
       style={{
@@ -54,7 +58,7 @@ const HomeHeader = () => {
             color: COLORS.white,
           }}
         >
-          Hello, Victoria 👋
+          Hello {user.firstName !== ""? "," + user.firstName: <></>} 👋
         </Text>
         <Text
           style={{

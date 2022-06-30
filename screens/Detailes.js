@@ -5,7 +5,7 @@ import { COLORS, FONTS, SIZES, assets, SHADOWS } from "../constants";
 import { SubInfo, FocusedStatusBar, CircleButton, RectButton,
  DetailesDesc, DetailesBid, ScreenHeader} from '../components'
 
-import { addToCart } from "../reducers/cartSlice";
+import { addToCart } from "../redux/reducers/cartSlice";
 import { useDispatch } from "react-redux";
 
 const DetailesHeader = ({data, navigation})=>(

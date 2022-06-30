@@ -14,7 +14,7 @@ const ScreenHeader = () => {
     <View
       style={{
         width: "100%",
-        justifyContent: "space-between",
+        justifyContent: "flex-end",
         alignItems: "center",
         flexDirection: "row",
         padding: SIZES.small,
@@ -23,12 +23,12 @@ const ScreenHeader = () => {
         marginTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight + 10,
       }}
     >
-      <CircleButton
+      {/* <CircleButton
         imgUrl={assets.left}
         handlePress={() => navigation.goBack()}
         // left={15}
         // top={StatusBar.currentHeight + 10}
-      />
+      /> */}
       <ShoppingCartIcon />
     </View>
   );
